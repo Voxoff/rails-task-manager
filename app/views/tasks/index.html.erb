@@ -1,0 +1,16 @@
+<h1>Voila, les tasks</h1>
+
+
+<form action="/delete">
+<% @tasks.each do |task| %>
+  <p>
+    <input type="checkbox" name="<%= task.title %>">
+    <%= link_to task.title, task_path(task) %>
+    <%= link_to "Delete", task_path(task), method: :delete %>
+  </p>
+
+<% end %>
+</form>
+
+<%= link_to "New task?", form_path %>
+
